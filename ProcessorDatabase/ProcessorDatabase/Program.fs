@@ -1,6 +1,4 @@
-﻿open System
-
-[<EntryPoint>]
+﻿[<EntryPoint>]
 let main argv =
     Application.run()
     0

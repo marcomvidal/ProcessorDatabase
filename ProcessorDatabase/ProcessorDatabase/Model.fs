@@ -2,11 +2,13 @@
 
 type MenuOption = 
     | Create
-    | ShowSummary
+    | ShowAll
+    | Edit
     | Invalid
 
 type Processor = 
     {
+        id: int
         manufacturer: string
         model: string
         frequency: decimal
