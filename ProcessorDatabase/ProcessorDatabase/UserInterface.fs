@@ -3,7 +3,7 @@
 open Model
 open System
 open Presenter
-open Operations
+open Service
 
 let banner() = 
     drawTitle "Processor Database"
@@ -15,7 +15,7 @@ let menu() =
     3. Edit a processor
     4. Delete a processor
     """
-    printf "Select option [1-3]: "
+    printf "Select option [1-4]: "
     let option = Console.ReadLine()
 
     match option with
