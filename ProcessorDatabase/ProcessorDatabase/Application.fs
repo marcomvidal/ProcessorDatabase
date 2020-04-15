@@ -15,11 +15,9 @@ let rec run() =
     | MenuOption.Create ->
         lastId <- lastId + 1
         processors <- create lastId processors
-    | MenuOption.ShowAll ->
-        showAll processors asFullDescription
-    | MenuOption.Edit ->
-        processors <- edit processors
-    | MenuOption.Invalid ->
-        invalidOption()
+    | MenuOption.ShowAll -> showAll asFullDescription processors
+    | MenuOption.Edit -> processors <- edit processors
+    | MenuOption.Delete -> processors <- delete processors
+    | MenuOption.Invalid -> invalidOption()
     
     run()

@@ -4,6 +4,7 @@ type MenuOption =
     | Create
     | ShowAll
     | Edit
+    | Delete
     | Invalid
 
 type Processor = 
