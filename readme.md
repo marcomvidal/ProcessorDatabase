@@ -1,6 +1,6 @@
 # ProcessorDatabase
 
-Aplicação Console de gerenciamento de processadores (CPUs) com armazenamento em Memória RAM. Desenvolvido em linguagem funcional e aproveitando os recursos-chave deste paradigma.
+AplicaÃ§Ã£o Console de gerenciamento de processadores (CPUs) com armazenamento em MemÃ³ria RAM. Desenvolvido em linguagem funcional, aproveitando os recursos-chave deste paradigma.
 
 ## Ferramentas utilizadas
 - F# 4.7
@@ -9,38 +9,36 @@ Aplicação Console de gerenciamento de processadores (CPUs) com armazenamento em 
 ## Componentes
 - `Application`: Container de estados e direcionamento de fluxo geral;
 - `Model`: Tipos de dados;
-- `Presenter`: Formatações visuais reutilizáveis;
+- `Presenter`: FormataÃ§Ãµes visuais reutilizÃ¡veis;
 - `Program`: Ponto de entrada;
-- `Service`: Manipulação de dados;
-- `UserInterface`: Fluxo de interação com usuário.
+- `Service`: ManipulaÃ§Ã£o de dados;
+- `UserInterface`: Fluxo de interaÃ§Ã£o com usuÃ¡rio.
 
 ## Application
-Direciona a entrada nas funcionalidades do sistema através da função `run()` que abriga um pattern matching de `MenuOption`.<br />
-Dado que é recursiva, tão logo que uma funcionalidade termina seu fluxo, a execução volta para o menu.<br />
-Contém também as variáveis `processors` e `lastId` que controlam o estado dos processadores armazenados para toda a aplicação.
+Direciona a entrada nas funcionalidades do sistema atravÃ©s da funÃ§Ã£o `run()` que abriga um pattern matching de `MenuOption`.
+Dado que Ã© recursiva, tÃ£o logo que uma funcionalidade concluÃ­ seu fluxo, a execuÃ§Ã£o volta para o menu.<br />
+ContÃ©m tambÃ©m as variÃ¡veis `processors` e `lastId` que controlam o estado dos processadores armazenados para toda a aplicaÃ§Ã£o.
 
 ## Model
-Abriga todos os tipos complexos utilizados. São eles: <br />
-- `MenuOption`: Discriminated Union. Contém as funcionalidades existentes no sistema;<br />
-- `Processor`: Type. Reúne todas as informações de um dado processador.
+Abriga todos os tipos complexos utilizados. SÃ£o eles: <br />
+- `MenuOption`: Discriminated Union. ContÃ©m as funcionalidades existentes no sistema;<br />
+- `Processor`: Type. ReÃºne todas as informaÃ§Ãµes de um dado processador.
 
 ## Presenter
-Centraliza funções de formatação visual que são utilizadas diversas vezes em `UserInterface`.<br />
-Algumas funções são realmente simples, mas justificam sua existência por tornar o código mais idiomático.<br />
-A construção do código privilegiou uso de pattern matching, composição e funções de alta ordem.
+Centraliza funÃ§Ãµes de formataÃ§Ã£o visual que sÃ£o utilizadas diversas vezes em `UserInterface`. Algumas sÃ£o realmente simples, mas justificam sua existÃªncia por tornar o cÃ³digo mais idiomÃ¡tico.<br />
+A construÃ§Ã£o do cÃ³digo privilegiou uso de pattern matching, composiÃ§Ã£o e funÃ§Ãµes de alta ordem.
 
 ## Program
-Ponto de entrada da aplicação. Dispara a função recursiva `run()` de `Application`.
+Ponto de entrada da aplicaÃ§Ã£o. Dispara a funÃ§Ã£o recursiva `run()` de `Application`.
 
 ## Service
-Centraliza as operações de armazenamento, escolha e exclusão de processadores.<br />
-Operações de filtragem fazem uso de expressões lambda e operações de procura fazem uso da mônada `Option`, retornando algum `Processor` ou `None`.
+Centraliza as operaÃ§Ãµes de armazenamento, escolha e exclusÃ£o de processadores.<br />
+OperaÃ§Ãµes de filtragem fazem uso de expressÃµes lambda e operaÃ§Ãµes de procura fazem uso da mÃ´nada `Option`, retornando algum `Processor` ou `None`.
 
 ## UserInterface
-O "recheio" da aplicação, onde as etapas de cada uma das funcionalidades escolhidas no menu se desdobram.<br />
-Operações com potencial de falha por entrada incorretas do usuário fazem uso de pattern matching com `Some` e `None`.
+O "recheio" da aplicaÃ§Ã£o, onde as etapas de cada uma das funcionalidades escolhidas no menu se desdobram. OperaÃ§Ãµes com potencial de falha por entrada incorretas do usuÃ¡rio fazem uso de pattern matching com `Some` e `None`.
 
 ## Screenshots
-* [Menu de opções](https://raw.githubusercontent.com/marcomvidal/ProcessorDatabase/master/screenshot_menu.png)
+* [Menu de opÃ§Ãµes](https://raw.githubusercontent.com/marcomvidal/ProcessorDatabase/master/screenshot_menu.png)
 * [Cadastro de processadores](https://raw.githubusercontent.com/marcomvidal/ProcessorDatabase/master/screenshot_create.png)
 * [Listagem de processadores](https://raw.githubusercontent.com/marcomvidal/ProcessorDatabase/master/screenshot_summary.png)
