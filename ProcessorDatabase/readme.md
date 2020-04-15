@@ -36,8 +36,7 @@ Centraliza as operações de armazenamento, escolha e exclusão de processadores.<b
 Operações de filtragem fazem uso de expressões lambda e operações de procura fazem uso da mônada `Option`, retornando algum `Processor` ou `None`.
 
 ## UserInterface
-O "recheio" da aplicação, onde as etapas de cada uma das funcionalidades escolhidas no menu se desdobram.<br />
-Operações com potencial de falha por entrada incorretas do usuário fazem uso de pattern matching com `Some` e `None`.
+O "recheio" da aplicação, onde as etapas de cada uma das funcionalidades escolhidas no menu se desdobram. Operações com potencial de falha por entrada incorretas do usuário fazem uso de pattern matching com `Some` e `None`.
 
 ## Screenshots
 * [Menu de opções](https://raw.githubusercontent.com/marcomvidal/ProcessorDatabase/master/screenshot_menu.png)
