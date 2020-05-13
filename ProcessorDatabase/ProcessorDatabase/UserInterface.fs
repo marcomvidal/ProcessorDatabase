@@ -5,12 +5,10 @@ open System
 open Presenter
 open Service
 
-
-
 let banner() = 
     drawTitle "Processor Database"
 
-let menu (options:MenuOption list) = 
+let menu (options : MenuOption list) = 
     printfn "Select an option:"
 
     options
