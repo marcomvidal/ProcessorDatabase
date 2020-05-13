@@ -5,25 +5,25 @@ open System
 open Presenter
 open Service
 
+
+
 let banner() = 
     drawTitle "Processor Database"
 
-let menu() = 
-    printfn """Select an option:
-    1. Create a processor
-    2. Show all processors
-    3. Edit a processor
-    4. Delete a processor
-    """
-    printf "Select option [1-4]: "
+let menu (options:MenuOption list) = 
+    printfn "Select an option:"
+
+    options
+    |> List.iter (fun o -> printfn "%s. %s" o.id o.description)
+
+    let lastItem = options |> List.rev |> List.head |> (fun o -> o.id)
+    printf "Select option [1-%s]: " lastItem
     let option = Console.ReadLine()
 
-    match option with
-    | "1" -> MenuOption.Create
-    | "2" -> MenuOption.ShowAll
-    | "3" -> MenuOption.Edit
-    | "4" -> MenuOption.Delete
-    | _ -> MenuOption.Invalid
+    match options |> List.tryFind (fun o -> o.id = option) with
+    | Some option -> option.operation
+    | None -> Invalid
+    
 
 let invalidOption() = 
     "Invalid option. Select an option again."

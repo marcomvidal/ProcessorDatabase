@@ -15,13 +15,15 @@ Aplicação Console de gerenciamento de processadores (CPUs) com armazenamento e
 - `UserInterface`: Fluxo de interação com usuário.
 
 ## Application
-Direciona a entrada nas funcionalidades do sistema através da função `run()` que abriga um pattern matching de `MenuOption`.
+Direciona a entrada nas funcionalidades do sistema através da função `run()` que abriga um pattern matching de `MenuOperation`.
 Dado que é recursiva, tão logo que uma funcionalidade concluí seu fluxo, a execução volta para o menu.<br />
-Contém também as variáveis `processors` e `lastId` que controlam o estado dos processadores armazenados para toda a aplicação.
+Contém a lista de opções do menu que são usadas para sua respectiva apresentação em `UserInterface`.<br />
+Abriga também as variáveis `processors` e `lastId`, que controlam o estado dos processadores armazenados para toda a aplicação.
 
 ## Model
 Abriga todos os tipos complexos utilizados. São eles: <br />
-- `MenuOption`: Discriminated Union. Contém as funcionalidades existentes no sistema;<br />
+- `MenuOperation`: Discriminated Union. Serve de direcionador para as diferentes partes da aplicação;
+- `MenuOption`: Type. Contém as informações de cada opção presente no menu;
 - `Processor`: Type. Reúne todas as informações de um dado processador.
 
 ## Presenter

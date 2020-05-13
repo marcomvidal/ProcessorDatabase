@@ -1,11 +1,18 @@
 ﻿module Model
 
-type MenuOption = 
+type MenuOperation = 
     | Create
     | ShowAll
     | Edit
     | Delete
     | Invalid
+
+type MenuOption =
+    {
+        id: string
+        description: string
+        operation: MenuOperation
+    }
 
 type Processor = 
     {
