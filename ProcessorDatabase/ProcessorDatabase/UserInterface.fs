@@ -21,7 +21,6 @@ let menu (options : MenuOption list) =
     match options |> List.tryFind (fun o -> o.id = option) with
     | Some option -> option.operation
     | None -> Invalid
-    
 
 let invalidOption() = 
     "Invalid option. Select an option again."
