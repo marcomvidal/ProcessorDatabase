@@ -23,8 +23,17 @@ let generateTitle title =
 let drawTitle title = 
     printfn "%s" (generateTitle title)
 
+let showSelectOption lastId =
+    ("Select option [1-" + lastId + "]: ")
+    |> breakLineBefore
+    |> printf "%s"
+
+let drawMenu (options : MenuOption list) =
+    printfn "Select an option:"
+    options |> List.iter (fun o -> printfn "%s. %s" o.id o.description)
+
 let ask question =
-    printf "%s" (question + " ")
+    printf "%s " question
     Console.ReadLine()
 
 let asSummary processor =

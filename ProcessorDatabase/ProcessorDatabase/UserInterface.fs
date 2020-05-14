@@ -9,13 +9,9 @@ let banner() =
     drawTitle "Processor Database"
 
 let menu (options : MenuOption list) = 
-    printfn "Select an option:"
-
-    options
-    |> List.iter (fun o -> printfn "%s. %s" o.id o.description)
-
-    let lastItem = options |> List.rev |> List.head |> (fun o -> o.id)
-    printf "Select option [1-%s]: " lastItem
+    drawMenu options
+    let lastId = options |> List.rev |> List.head |> fun o -> o.id
+    showSelectOption lastId
     let option = Console.ReadLine()
 
     match options |> List.tryFind (fun o -> o.id = option) with
